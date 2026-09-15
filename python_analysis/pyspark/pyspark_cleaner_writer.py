@@ -1,3 +1,5 @@
+import os
+import shutil
 from pyspark.sql import SparkSession, functions as f
 
 spark = SparkSession.builder \
@@ -42,3 +44,9 @@ df_cleaned.write \
     .parquet(output_path)
 
 spark.stop()
+
+if os.path.exists(output_path):
+    if os.path.isdir(output_path):
+        shutil.rmtree(output_path)
+    else:
+        os.remove(output_path)
