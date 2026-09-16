@@ -15,7 +15,7 @@ local_file = "orders_raw.parquet"
 df_orders.to_parquet(local_file, index=False)
 
 s3_client = boto3.client('s3')
-bucket_name= os.getenv('AWS_BUCKET_NAME')
+bucket_name = os.getenv('AWS_BUCKET_NAME')
 s3_file_key = 'raw/orders/orders_raw.parquet'
 
 print(f" Uploading {local_file} to S3 bucket '{bucket_name}'... ")
