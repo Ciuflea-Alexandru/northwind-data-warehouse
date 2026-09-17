@@ -27,6 +27,7 @@ SELECT
     total_spend,
     total_orders,
     avg_line_total,
+    -- windows function that automatically splits the dataset into 4 equal buckets
     NTILE(4) OVER (ORDER BY total_spend DESC) AS spending_quartile
 FROM customer_summary
 ORDER BY customer_id;
@@ -38,6 +39,7 @@ print(f'\n Total customers evaluated: {len(df)} ')
 print(df.head(5))
 
 print('\n Reshaping data with pandas pivot table... ')
+# instead of standard groupby() a pibot table reshapes data into a spreadsheet style matrix
 df_pivot = pd.pivot_table(
     df,
     values='total_spend',
