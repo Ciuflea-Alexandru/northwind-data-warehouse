@@ -11,12 +11,12 @@ master_customers = [
 
 incoming_customer = {
     'raw_name': [
-    'Afgreds Futterkist',       # Missing 'e'
-    'Ana Trujillo Empareddos',  # Typo in 'Emparedados'
-    'Antonio Moreno Taqueria',  # Missing accent mark
-    'Around the Hrn',           # Typo
-    'Totally Unknown Company'   # Brand new/unmatched anomaly
-],
+        'Afgreds Futterkist',  # Missing 'e'
+        'Ana Trujillo Empareddos',  # Typo in 'Emparedados'
+        'Antonio Moreno Taqueria',  # Missing accent mark
+        'Around the Hrn',  # Typo
+        'Totally Unknown Company'  # Brand new/unmatched anomaly
+    ],
     'order_amount': [150.0, 320.0, 450.0, 120.0, 999.0]
 }
 
