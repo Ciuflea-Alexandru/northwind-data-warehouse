@@ -9,3 +9,4 @@ pyspark>=3.5.3
 rapidfuzz>=3.0.0
 logging~=0.4.9.6
 pathlib~=1.0.1
+matplotlib>=3.7.0
