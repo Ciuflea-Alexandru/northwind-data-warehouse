@@ -2,20 +2,30 @@
 
 A comprehensive, end-to-end data engineering and analytics portfolio project built around the classic **Northwind Traders** relational database. This repository demonstrates the transition from traditional operational database management (OLTP) to modern analytical data warehousing (OLAP Star Schema) and programmatic data manipulation using Python and Pandas.
 
+## Why an OLAP Star Schema? 
+
+Operational databases (OLTP like northwind_oltp) are optimized for row-level transactional integrity, fast writes, and normalization (3NF), which makes complex analytical aggregation slow and query-heavy. By transforming and loading this data into an analytical Star Schema (northwind_olap), we decouple reporting workloads from production systems, pre-joining dimensions (dim_customers, dim_products, dim_time) with a central fact table (fact_sales) to accelerate analytical queries.
+
+## Declarative & Programmatic Governance
+
+Rather than relying on manual scripts or brittle Jupyter notebooks, this pipeline utilizes object-oriented design principles, custom file-system-aware logging (pathlib & inspect), and environment segregation. This ensures end-to-end traceability and reproducibility.
+
+## Actionable Business Intelligence Theory 
+
+Data engineering is only as valuable as the decisions it unlocks. This project implements standard enterprise metrics—such as Pareto Analysis (The 80/20 Rule) for inventory management, Recency/Frequency/Monetary (RFM) Segmentation, and Multi-Series Seasonality Forecasting—to translate raw bytes into executive-ready insights.
+
 ---
 
 ## 📋 Project Architecture & Roadmap
 
 ```
-|-- .vscode/          # Configurations & SQLTools connections
 |-- datasets/         # Raw database initialization scripts
+|-- logs/             # Local exports of diffrent log files
 |-- python_analysis/  # Python scripts for Pandas/OLTP
-|--| sql_analysis/    # SQL scripts
-|  |--challenges/     # Advanced SQL problem-solving queries
-|  |--modules/        # Schema creation, OLAP modeling
-|-- .gitignore/       # Files that git should never track
-|-- .README/          # Quick summary of the project
-|-- .requiremnts/     # Necessary libraries
+|-- sql_analysis/     # SQL scripts
+|-- .gitignore        # Files that git should never track
+|-- .README           # Quick summary of the project
+|-- .requiremnts      # Necessary libraries
 ```
 
 ## 🛠️ Local Environment & Database Setup
